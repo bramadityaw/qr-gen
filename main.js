@@ -3,14 +3,19 @@ document.addEventListener("DOMContentLoaded", () => {
   const urlInput = document.getElementById("url");
   const generateButton = document.getElementById("generatorButton");
 
+  const r = /^(ftp|http|https):\/\/[^ "]+$/;
+
   function makeCode() {
-    qr.makeCode(urlInput.value);
+    r.test(urlInput.value)
+      ? qr.makeCode(urlInput.value)
+      : alert("Invalid URL! Add http:// or https:// before the domain name");
   }
 
   makeCode();
+
   urlInput.addEventListener("keydown", (e) => {
-    if (e.key === 'Enter') {
-      makeCode()
+    if (e.key === "Enter") {
+      makeCode();
     }
   });
   generateButton.addEventListener("click", () => makeCode());
