@@ -29,14 +29,29 @@
         text-align: center;
       }
 
+      .input {
+        margin-top: 1rem;
+      }
+
       .results {
         max-width: 256px;
         margin-inline: auto;
+        container-type: size;
       }
 
       #qrcode {
         aspect-ratio: 1;
-        min-width: 64px;
+        min-width: 128px;
+      }
+
+      @container (width < 256px) {
+        #qrcode, #qrcode > img {
+          width: 100%;
+        }
+
+        .input {
+          flex-direction: column;
+        }
       }
     </style>
     <script src="qrcode.min.js"></script>
@@ -46,7 +61,7 @@
       <h1>QR Gen</h1>
       <h3>Generate QR Codes for free!</h3>
       <div class="results">
-        <div class="flex" style="justify-content: space-between;">
+        <div class="flex input" style="justify-content: space-between; margin-bottom: 1.25rem;">
           <input id="url" type="text" value="https://irzaqi.com/" />
           <button id="generatorButton">Generate!</button>
         </div>
