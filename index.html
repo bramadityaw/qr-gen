@@ -4,12 +4,55 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>bramadityaw - QR Gen</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .flex {
+        display: flex;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      .container {
+        max-width: 60%;
+        margin-inline: auto;
+      }
+
+      .container h1,
+      .container h3 {
+        text-align: center;
+      }
+
+      .results {
+        max-width: 256px;
+        margin-inline: auto;
+      }
+
+      #qrcode {
+        aspect-ratio: 1;
+        min-width: 64px;
+      }
+    </style>
     <script src="qrcode.min.js"></script>
   </head>
   <body>
-    <input id="url" type="text" value="https://irzaqi.com/" />
-    <button id="generatorButton">Generate!</button>
-    <div id="qrcode" style="width: 100px; height: 100px"></div>
+    <div class="container">
+      <h1>QR Gen</h1>
+      <h3>Generate QR Codes for free!</h3>
+      <div class="results">
+        <div class="flex" style="justify-content: space-between;">
+          <input id="url" type="text" value="https://irzaqi.com/" />
+          <button id="generatorButton">Generate!</button>
+        </div>
+        <div id="qrcode"></div>
+      </div>
+    </div>
 
     <script src="main.js"></script>
   </body>
