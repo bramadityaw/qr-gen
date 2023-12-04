@@ -36,9 +36,8 @@
       }
 
       .results {
-        max-width: 256px;
-        margin-inline: auto;
-        container-type: size;
+        container-type: inline-size;
+        margin-bottom: 1rem;
       }
 
       #qrcode {
@@ -61,15 +60,27 @@
   </head>
   <body>
     <div class="container">
-      <h1>QR Gen</h1>
-      <h3>Generate QR Codes for free!</h3>
-      <div class="results">
-        <div class="flex input">
-          <input id="url" type="text" value="https://irzaqi.com/" />
-          <button id="generatorButton">Generate!</button>
+      <header>
+        <h1>QR Gen</h1>
+        <h3>Generate QR Code from URLs for free!</h3>
+      </header>
+      <main style="max-width: 256px; margin-inline: auto;">
+        <div class="results">
+          <div class="flex input">
+            <input id="url" type="text" value="https://irzaqi.com/" />
+            <button id="generatorButton">Generate!</button>
+          </div>
+          <div id="qrcode"></div>
         </div>
-        <div id="qrcode"></div>
-      </div>
+        <article>
+          <h3>How to use this site</h3>
+          <ol>
+            <li>Paste your URL link in the input field</li>
+            <li>Click 'Generate' or press ENTER</li>
+            <li>Voila! Your QR Code is ready to go!</li>
+          </ol>
+        </article>
+      </main>
     </div>
 
     <script src="main.js"></script>
