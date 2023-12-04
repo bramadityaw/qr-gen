@@ -31,6 +31,8 @@
 
       .input {
         margin-top: 1rem;
+        justify-content: space-between;
+        margin-bottom: 1.25rem;
       }
 
       .results {
@@ -45,7 +47,8 @@
       }
 
       @container (width < 256px) {
-        #qrcode, #qrcode > img {
+        #qrcode,
+        #qrcode > img {
           width: 100%;
         }
 
@@ -61,7 +64,7 @@
       <h1>QR Gen</h1>
       <h3>Generate QR Codes for free!</h3>
       <div class="results">
-        <div class="flex input" style="justify-content: space-between; margin-bottom: 1.25rem;">
+        <div class="flex input">
           <input id="url" type="text" value="https://irzaqi.com/" />
           <button id="generatorButton">Generate!</button>
         </div>
